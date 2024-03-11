@@ -12,7 +12,7 @@ pipeline {
             }
         }
         
-        stage('Initializing Terraform'){
+        stage('Initializings Terraform'){
             steps{
                 script{
                     dir('EKS'){
