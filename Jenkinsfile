@@ -15,19 +15,15 @@ pipeline {
         stage('Initializings Terraform'){
             steps{
                 script{
-                    dir('EKS'){
                         sh 'terraform init'
                     }
                 }
             }
-        }
         
         stage('Formating Terraform'){
             steps{
                 script{
-                    dir('EKS'){
                         sh 'terraform fmt'
-                    }
                 }
             }
         }
@@ -35,9 +31,7 @@ pipeline {
         stage('Validating Terraform'){
             steps{
                 script{
-                    dir('EKS'){
                         sh 'terraform validate'
-                    }
                 }
             }
         }
@@ -45,9 +39,7 @@ pipeline {
         stage('Review Terraform') {
             steps {
                 script {
-                    dir('EKS') {
                         sh 'terraform plan'
-                    }
                 }
             }
         }
